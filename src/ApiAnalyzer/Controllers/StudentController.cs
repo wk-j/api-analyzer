@@ -14,9 +14,14 @@ namespace ApiAnalyzer.Controllers {
         [ProducesResponseType(typeof(Student), StatusCodes.Status200OK)]
         [ProducesResponseType(401)]
         [ProducesResponseType(404)]
+        [ProducesResponseType(204)]
         public ActionResult<Student> Get(int id) {
             if (id == 0) {
                 return NotFound();
+            }
+
+            if (id == 2) {
+                return NoContent();
             }
 
             if (id == 1) {
